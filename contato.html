@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <title>Contato - Espaço Felipe Gabriel</title>
   <link rel="stylesheet" href="estilo.css">
+  <!-- Ícone do WhatsApp via CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .whatsapp-contato {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .whatsapp-contato a {
+      color: #25D366;
+      font-size: 24px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -32,6 +47,11 @@
         <button type="submit">Enviar</button>
       </form>
       <p id="mensagem-sucesso" style="display:none; color: green;">Sua mensagem foi enviada com sucesso!</p>
+
+      <div class="whatsapp-contato">
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/5516991698585" target="_blank">Fale conosco pelo WhatsApp</a>
+      </div>
     </section>
   </main>
   <footer>
