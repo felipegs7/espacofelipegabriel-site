@@ -144,3 +144,95 @@ form button {
   font-size: 1.1em;
   color: #00ffff;
 }
+
+/* 🎨 LISTA DE CATEGORIAS COM EFEITO DE ONDAS */
+.categorias {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categorias li {
+  margin: 15px 0;
+}
+
+.categorias a {
+  display: block;
+  background-color: #00ffff;
+  color: #0b0c2a;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 255, 255, 0);
+  animation: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.categorias a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.categorias a:hover {
+  background-color: #00cccc;
+  animation: pulseWave 1.5s infinite;
+  box-shadow:
+    0 0 10px 2px rgba(0, 255, 255, 0.6),
+    0 0 20px 5px rgba(0, 255, 255, 0.4),
+    0 0 30px 10px rgba(0, 255, 255, 0.2);
+}
+
+.categorias a:hover::before {
+  opacity: 1;
+  animation: waveExpand 1.5s infinite;
+}
+
+@keyframes pulseWave {
+  0% {
+    box-shadow:
+      0 0 10px 2px rgba(0, 255, 255, 0.6),
+      0 0 20px 5px rgba(0, 255, 255, 0.4),
+      0 0 30px 10px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 15px 4px rgba(0, 255, 255, 0.8),
+      0 0 25px 7px rgba(0, 255, 255, 0.6),
+      0 0 35px 15px rgba(0, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow:
+      0 0 10px 2px rgba(0, 255, 255, 0.6),
+      0 0 20px 5px rgba(0, 255, 255, 0.4),
+      0 0 30px 10px rgba(0, 255, 255, 0.2);
+  }
+}
+
+@keyframes waveExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0;
+  }
+}
