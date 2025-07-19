@@ -4,6 +4,26 @@
   <meta charset="UTF-8" />
   <title>Obras - Espaço Felipe Gabriel</title>
   <link rel="stylesheet" href="estilo.css" />
+  <style>
+    .filtro-obras {
+      margin-bottom: 20px;
+    }
+    .galeria-obras {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .obra {
+      width: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+    .obra.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -16,19 +36,58 @@
       <a href="contato.html">Contato</a>
     </nav>
   </header>
+
   <main>
     <section>
       <h2>Obras</h2>
-      <p>Selecione uma categoria para explorar as obras:</p>
-      <ul class="categorias">
-        <li><a href="obras-aguas.html" target="_blank" rel="noopener noreferrer">Sobre Águas</a></li>
-        <!-- Mais categorias futuramente -->
-      </ul>
+      <p>Filtre por categoria:</p>
+      <select id="filtro" class="filtro-obras">
+        <option value="todas">Todas</option>
+        <option value="aguas">Sobre Águas</option>
+        <option value="carnaval">Carnaval</option>
+        <option value="indigena">Arte Indígena</option>
+      </select>
+
+      <div class="galeria-obras">
+        <div class="obra aguas">
+          <h3>Rios em Movimento</h3>
+          <p>Categoria: Sobre Águas</p>
+        </div>
+        <div class="obra carnaval">
+          <h3>Ritmo do Carnaval</h3>
+          <p>Categoria: Carnaval</p>
+        </div>
+        <div class="obra indigena">
+          <h3>Padrões Ancestrais</h3>
+          <p>Categoria: Arte Indígena</p>
+        </div>
+        <div class="obra aguas">
+          <h3>Maré Azul</h3>
+          <p>Categoria: Sobre Águas</p>
+        </div>
+        <!-- Adicione mais obras aqui -->
+      </div>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Espaço Felipe Gabriel.</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    const filtro = document.getElementById('filtro');
+    const obras = document.querySelectorAll('.obra');
+
+    filtro.addEventListener('change', () => {
+      const categoria = filtro.value;
+      obras.forEach(obra => {
+        if (categoria === 'todas' || obra.classList.contains(categoria)) {
+          obra.classList.remove('hidden');
+        } else {
+          obra.classList.add('hidden');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
