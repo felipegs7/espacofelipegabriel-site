@@ -7,18 +7,27 @@
   <style>
     .filtro-obras {
       margin-bottom: 20px;
+      padding: 8px;
+      font-size: 16px;
     }
     .galeria-obras {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
     }
     .obra {
-      width: 200px;
+      width: 220px;
       border: 1px solid #ccc;
       padding: 10px;
       border-radius: 8px;
       background-color: #fff;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .obra img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
     }
     .obra.hidden {
       display: none;
@@ -50,22 +59,25 @@
 
       <div class="galeria-obras">
         <div class="obra aguas">
+          <img src="imagens/rios-em-movimento.jpg" alt="Rios em Movimento">
           <h3>Rios em Movimento</h3>
           <p>Categoria: Sobre Águas</p>
         </div>
+        <div class="obra aguas">
+          <img src="imagens/mare-azul.jpg" alt="Maré Azul">
+          <h3>Maré Azul</h3>
+          <p>Categoria: Sobre Águas</p>
+        </div>
         <div class="obra carnaval">
+          <img src="imagens/ritmo-carnaval.jpg" alt="Ritmo do Carnaval">
           <h3>Ritmo do Carnaval</h3>
           <p>Categoria: Carnaval</p>
         </div>
         <div class="obra indigena">
+          <img src="imagens/padroes-ancestrais.jpg" alt="Padrões Ancestrais">
           <h3>Padrões Ancestrais</h3>
           <p>Categoria: Arte Indígena</p>
         </div>
-        <div class="obra aguas">
-          <h3>Maré Azul</h3>
-          <p>Categoria: Sobre Águas</p>
-        </div>
-        <!-- Adicione mais obras aqui -->
       </div>
     </section>
   </main>
